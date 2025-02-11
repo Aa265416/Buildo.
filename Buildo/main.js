@@ -1,4 +1,28 @@
+let cursor = document.querySelector("#cursor");
+let body = document.querySelector("#body");
+let buttons = document.querySelectorAll('.btn')
+
+body.addEventListener("mousemove", function(coordinates){
+    //console.log(coordinates);
+    gsap.to("#cursor span", {
+        x: coordinates.x,
+        y:coordinates.y,
+        duration: 0.9,
+        stagger: 0.035,
+        ease:"back.out"
+    })
+})
+buttons.forEach(button => {
+    button.addEventListener("mouseenter", function(){
+        cursor.style.display = "none";
+    })
+    button.addEventListener("mouseleave", function(){
+        cursor.style.display = "flex";
+    })
+})
+
 document.addEventListener('DOMContentLoaded', (Event)=>{
+
     gsap.registerPlugin(MotionPathPlugin);
     gsap.to("#img-1 ", {
         duration: 25, 
@@ -146,7 +170,6 @@ gsap.to('#cubes', {
    
 })
 gsap.to('#new_box', {
-    
     x: '3px',
     ease: "power4.out",
     duration: 0.9, 
