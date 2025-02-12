@@ -11,6 +11,39 @@ body{
 html::-webkit-scrollbar {
     display: none;
 }
+#cursor{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    z-index: 99;
+}
+#cursor span{
+    position: fixed;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffb14b;
+    z-index: 9;
+}
+#cursor .cir2{
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #F13F62;
+    z-index: 8;
+}
+#cursor .cir3{
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 7;
+}
 h1,h2,h3,h4,h5,h6{
     font-family: "Nunito", sans-serif !important;
 }
@@ -34,6 +67,7 @@ h1,h2,h3,h4,h5,h6{
 .menu_section ul li {
     list-style: none;
     padding: 0 11px;
+    transition: all 300ms ease;
 }
 
 header {
@@ -46,7 +80,8 @@ header {
     color: #A0A0A0;
     text-decoration: none;
 }
-
+.menu_section ul:hover li{filter: blur(3px);}
+.menu_section ul li:hover{filter: blur(0px);}
 .menu_section ul li.active a {
     color: #F13F62;
 }
